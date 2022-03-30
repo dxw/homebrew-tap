@@ -1,8 +1,8 @@
 class Whippet < Formula
   desc "Framework for building WordPress sites"
   homepage "https://github.com/dxw/whippet"
-  url "https://github.com/dxw/whippet/archive/v2.2.0.tar.gz"
-  sha256 "9c3c02dd9c854ec1b0affbed906d642ca49d22a94762f2fe110ac38f21be459b"
+  url "https://github.com/dxw/whippet/archive/v2.2.1.tar.gz"
+  sha256 "41d9193fca902521198a2fdf8e78e0bc3f8107388c8cdc3995029836ea6f5f80"
 
   depends_on "composer" => :build
   depends_on "subversion" => :build
@@ -12,13 +12,13 @@ class Whippet < Formula
     system "composer", "install"
 
     mkdir "#{prefix}/generators"
-    prefix.install Dir["generators/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["generators/*"].to_h { |path| [path, path] }
 
     mkdir "#{prefix}/src"
-    prefix.install Dir["src/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["src/*"].to_h { |path| [path, path] }
 
     mkdir "#{prefix}/vendor"
-    prefix.install Dir["vendor/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["vendor/*"].to_h { |path| [path, path] }
 
     bin.install "bin/whippet"
   end
