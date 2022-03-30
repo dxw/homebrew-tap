@@ -12,13 +12,13 @@ class Whippet < Formula
     system "composer", "install"
 
     mkdir "#{prefix}/generators"
-    prefix.install Dir["generators/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["generators/*"].to_h { |path| [path, path] }
 
     mkdir "#{prefix}/src"
-    prefix.install Dir["src/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["src/*"].to_h { |path| [path, path] }
 
     mkdir "#{prefix}/vendor"
-    prefix.install Dir["vendor/*"].map { |path| [path, path] }.to_h
+    prefix.install Dir["vendor/*"].to_h { |path| [path, path] }
 
     bin.install "bin/whippet"
   end
