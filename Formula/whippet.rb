@@ -24,7 +24,7 @@ class Whippet < Formula
   end
 
   test do
-    system "whippet", "generate", "app", "-d /tmp/test-app"
-    system "whippet", "generate", "theme", "-d /tmp/test-app/wp-content/themes/test-theme"
+    system "#{bin}/whippet", "generate", "app", "-d /tmp/test-app"
+    system "#{bin}/whippet", "generate", "theme", "-d /tmp/test-app/wp-content/themes/test-theme"
   end
 end
