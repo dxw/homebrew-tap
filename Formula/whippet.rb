@@ -1,8 +1,8 @@
 class Whippet < Formula
   desc "Framework for building WordPress sites"
   homepage "https://github.com/dxw/whippet"
-  url "https://github.com/dxw/whippet/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "d2db07202ba8501cf8e026791601e7f70957d0a86aa14d56390e4a9c23e68102"
+  url "https://github.com/dxw/whippet/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "f694126f678e6ca08c0bde056e1c5d4f2271ee224c8b946e0504e7c243935823"
 
   depends_on "composer" => :build
   depends_on "subversion" => :build
